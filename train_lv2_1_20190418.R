@@ -28,20 +28,20 @@ gc()
 cv_model_lv2_b_1 <- xgb.train(  data = dtrain,
   params = xgbparams, eta = 0.01, watchlist = list(train = dtrain, test = dtest),
   nrounds = 8000, early_stopping_rounds = 50,
-  maximize = F, print_every_n = 30,  gamma = 0.0023
+  maximize = F, print_every_n = 30,  gamma = 0.0024
 )
 
-#[583]	train-mae:0.017389	test-mae:0.018646
+#[585]	train-mae:0.017409	test-mae:0.018678
 save(cv_model_lv2_b_1, file = "model/cv_model20190418_lv2_b_1.Rdata")
 
 
 cv_model_lv2_b_1 <- xgb.train(  data = dtrain,
   params = xgbparams, eta = 0.01, watchlist = list(train = dtrain, test = dtest),
   nrounds = 8000, early_stopping_rounds = 50,
-  maximize = F, print_every_n = 30,  gamma = 0.0015
+  maximize = F, print_every_n = 30,  gamma = 0.0016
 )
 
-#[580]	train-mae:0.017388	test-mae:0.018644
+#[582]	train-mae:0.017407	test-mae:0.018680
 save(cv_model_lv2_b_1, file = "model/cv_model20190418_lv2_b_1.Rdata")
 
 
@@ -58,16 +58,16 @@ gc()
 cv_model_lv2_s_1 <- xgb.train(  data = dtrain,
   params = xgbparams, eta = 0.01, watchlist = list(train = dtrain, test = dtest),
   nrounds = 8000, early_stopping_rounds = 50,
-  maximize = F, print_every_n = 30,  gamma = 0.0033
+  maximize = F, print_every_n = 30,  gamma = 0.0032
 )
-#[514]	train-mae:0.025491	test-mae:0.028038
+#[511]	train-mae:0.025630	test-mae:0.028100
 save(cv_model_lv2_s_1, file = "model/cv_model20190418_lv2_s_1.Rdata")
 
 
 cv_model_lv2_s_1 <- xgb.train(  data = dtrain,
   params = xgbparams, eta = 0.01, watchlist = list(train = dtrain, test = dtest),
   nrounds = 8000, early_stopping_rounds = 50,
-  maximize = F, print_every_n = 30,  gamma = 0.0022
+  maximize = F, print_every_n = 30,  gamma = 0.0021
 )
-#[510]	train-mae:0.025494	test-mae:0.028040
+#[511]	train-mae:0.025627	test-mae:0.028099
 save(cv_model_lv2_s_1, file = "model/cv_model20190418_lv2_s_1.Rdata")

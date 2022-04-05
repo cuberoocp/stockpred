@@ -8,7 +8,7 @@ index = fread("tradeday.csv")
 ######################################
 
 
-lday = 20220331
+lday = 20220401
 
 repeat {
   isready = fread("constant/isready.csv")
@@ -19,10 +19,10 @@ repeat {
 }
 
 
-api(api_name = 'adj_factor',ts_code='689009.SH', trade_date='20210818')
+api(api_name = 'adj_factor',ts_code='689009.SH', trade_date='20220401')
 
 bar(ts_code = '689009.SH',
-    start_date = '20210801',
+    start_date = '20220330',
     end_date = as.character(lday),
     adj = "hfq"
 )
@@ -47,7 +47,7 @@ savedata()
 #################
 list = data.table(api(api_name = "stock_basic", list_status = "L"))
 max(as.character(list$list_date))
-#'20211011'
+#'20220331'
 fwrite(list[, .(ts_code, symbol, name, list_date, list_status = "L")],
        "constant/c2name.csv", row.names = F, quote = FALSE)
 
@@ -89,3 +89,8 @@ isready = fread("constant/isready.csv")
 isready = merge(index[is_open==1,.(V1=date)],isready,by="V1",all.x = T)
 isready = pad.null(isready,0)
 fwrite(isready,"constant/isready.csv",row.names = F,quote = FALSE)
+
+
+
+
+installr::updateR()

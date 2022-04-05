@@ -105,7 +105,7 @@ feature <- rbind(feature[label_3b > 0 & label_3s > 0, ], feature_new)
 feature <- feature[order(code, did, label_1b, label_1s, label_2b, label_2s, label_3b, label_3s)][, head(.SD, 1), by = .(code, did)]
 
 nrow(feature[date < 20050000 & (as.integer(code) + did * 777) %% 1000 <= 1000 * (did - 99999) / (periodid - 99999), ])
-# 152089
+# 151939
 fwrite(feature[date < 20050000 & (as.integer(code) + did * 777) %% 1000 <= 1000 * (did - 99999) / (periodid - 99999), ],
   "data2/labelset2000_20201127.csv",
   row.names = F, quote = FALSE
@@ -115,7 +115,7 @@ fwrite(merge(gdhs4, feature[date < 20050000 & (as.integer(code) + did * 777) %% 
 ), "data2/gdhs2000_20201127.csv", row.names = F, quote = FALSE)
 
 nrow(feature[date < 20100000 & date >= 20050000 & (as.integer(code) + did * 777) %% 1000 <= 1000 * (did - 99999) / (periodid - 99999), ])
-# 556384
+# 555831
 fwrite(feature[date < 20100000 & date >= 20050000 & (as.integer(code) + did * 777) %% 1000 <= 1000 * (did - 99999) / (periodid - 99999), ],
   "data2/labelset2005_20201127.csv",
   row.names = F, quote = FALSE
@@ -126,7 +126,7 @@ fwrite(merge(gdhs4, feature[date < 20100000 & date >= 20050000 & (as.integer(cod
 
 
 nrow(feature[date < 20150000 & date >= 20100000 & (as.integer(code) + did * 777) %% 1000 <= 1000 * (did - 99999) / (periodid - 99999), ])
-# 1421381
+# 1419952
 fwrite(feature[date < 20150000 & date >= 20100000 & (as.integer(code) + did * 777) %% 1000 <= 1000 * (did - 99999) / (periodid - 99999), ],
   "data2/labelset2010_20201127.csv",
   row.names = F, quote = FALSE
@@ -137,7 +137,7 @@ fwrite(merge(gdhs4, feature[date < 20150000 & date >= 20100000 & (as.integer(cod
 
 
 nrow(feature[date < 20200000 & date >= 20150000 & (as.integer(code) + did * 777) %% 1000 <= 1000 * (did - 99999) / (periodid - 99999), ])
-# 2763811
+# 2761072
 fwrite(feature[date < 20200000 & date >= 20150000 & (as.integer(code) + did * 777) %% 1000 <= 1000 * (did - 99999) / (periodid - 99999), ],
   "data2/labelset2015_20201127.csv",
   row.names = F, quote = FALSE
@@ -148,7 +148,7 @@ fwrite(merge(gdhs4, feature[date < 20200000 & date >= 20150000 & (as.integer(cod
 
 
 nrow(feature[date < 20220000 & date >= 20200000 & (as.integer(code) + did * 777) %% 1000 <= 1000 * (did - 99999) / (periodid - 99999), ])
-# 1771006
+# 1769547
 fwrite(feature[date < 20220000 & date >= 20200000 & (as.integer(code) + did * 777) %% 1000 <= 1000 * (did - 99999) / (periodid - 99999), ],
   "data2/labelset2020_20201127.csv",
   row.names = F, quote = FALSE
@@ -156,7 +156,7 @@ fwrite(feature[date < 20220000 & date >= 20200000 & (as.integer(code) + did * 77
 
 
 nrow(feature[date < 20230000 & date >= 20220000 & (as.integer(code) + did * 777) %% 1000 <= 1000 * (did - 99999) / (periodid - 99999), ])
-# 212810
+# 233949
 fwrite(feature[date < 20230000 & date >= 20220000 & (as.integer(code) + did * 777) %% 1000 <= 1000 * (did - 99999) / (periodid - 99999), ],
   "data2/labelset2022_20201127.csv",
   row.names = F, quote = FALSE
