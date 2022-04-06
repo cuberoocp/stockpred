@@ -1,4 +1,29 @@
-source("../lib.R")
+library(data.table)
+library(ggplot2)
+#library(rowr)
+library(forecast)
+library(xgboost)
+library(dummies)
+#library(rJava)
+library(sos)
+library(httr)
+library(jsonlite)
+library(XML)
+#library(lightgbm)
+library(Tushare)
+library(stringr)
+library(dplyr)
+
+api = Tushare::pro_api(token = '79fba1aebdf24a8fc0dd552714d79f6bfa5ca6e0fa742d8f5ab76268')
+bar = Tushare::pro_bar(token = '79fba1aebdf24a8fc0dd552714d79f6bfa5ca6e0fa742d8f5ab76268')
+
+pad.null = function(tableA,padv){
+  ## 对null值用padv进行填充
+  setDF(tableA)
+  tableA[is.na(tableA)]=padv
+  tableA[is.null(tableA)]=padv
+  setDT(tableA)
+}
 
 get.overall = function (hfq, index) {
   overall = fread("data/overall.csv")
